@@ -1,0 +1,172 @@
+:root {
+  --bg: #0a0a0a;
+  --bg2: #141414;
+  --fg: #e0e0e0;
+  --fg-muted: #9a9a9a;
+  --accent: #c01417;
+  --accent-dark: #5a0a0b;
+}
+
+/* Global */
+
+* {
+  border: none;
+  min-height: 0;
+  font-family: "Fira Sans", "Iosevka Nerd Font", monospace;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+window#waybar {
+  background-color: var(--bg);
+  color: var(--fg);
+
+  border: 2px solid rgba(192, 20, 23, 0.75); /* bright red border */
+  border-radius: 6px;
+
+  transition-property: background-color;
+  transition-duration: 0.3s;
+
+  padding: 0 8px;
+}
+
+/* Left / center / right blocks */
+
+.modules-left {
+  margin: 0;
+  padding: 2px 0;
+  text-shadow: 0 0 2px rgba(224, 224, 224, 0.3);
+}
+
+.modules-center {
+  border-left: 1px solid rgba(192, 20, 23, 0.2);
+  border-right: 1px solid rgba(192, 20, 23, 0.2);
+  padding: 0 16px;
+  text-shadow: 0 0 2px rgba(224, 224, 224, 0.2);
+}
+
+.modules-right {
+  padding: 2px 0;
+  margin-right: 4px;
+  text-shadow: 0 0 2px rgba(224, 224, 224, 0.3);
+}
+
+/* Workspaces block */
+
+#wlr-workspaces {
+  padding: 2px 0;
+  margin: 1px;
+  border-radius: 3px;
+  background: rgba(192, 20, 23, 0.12);
+  opacity: 0.95;
+}
+
+#wlr-workspaces button {
+  min-width: 16px;
+  min-height: 10px;
+  padding: 1px 4px;
+  margin: 1px;
+  border-radius: 3px;
+
+  background-color: rgba(90, 10, 11, 0.9);
+  color: var(--bg);
+  font-size: 9px;
+
+  opacity: 0.7;
+  transition: all 0.15s ease-in-out;
+}
+
+#wlr-workspaces button.active {
+  background-color: rgba(192, 20, 23, 0.95);
+  color: var(--bg);
+  font-size: 9px;
+  min-width: 22px;
+  opacity: 1.0;
+}
+
+#wlr-workspaces button:hover {
+  color: var(--fg);
+  background: rgba(10, 10, 10, 0.8);
+  opacity: 1.0;
+}
+
+#wlr-workspaces button.empty {
+  opacity: 0.25;
+}
+
+/* Generic module spacing */
+
+#custom-logo,
+#clock,
+#tray,
+#cpu,
+#battery,
+#network,
+#bluetooth,
+#pulseaudio,
+#mpris {
+  min-width: 12px;
+  margin: 0 8px;
+}
+
+/* Logo */
+
+#custom-logo {
+  font-size: 16px;
+  padding-top: 1px;
+}
+
+/* Clock */
+
+#clock {
+  font-weight: 500;
+}
+
+/* Audio / bluetooth / network / battery */
+
+#pulseaudio,
+#bluetooth,
+#network,
+#battery {
+  margin: 0 6px;
+}
+
+#pulseaudio.muted {
+  color: var(--fg-muted);
+}
+
+/* Tray */
+
+#tray {
+  margin: 0 6px;
+}
+
+/* Tooltip */
+
+tooltip {
+  background-color: rgba(10, 10, 10, 0.98);
+  border: 1px solid rgba(192, 20, 23, 0.5);
+  border-radius: 6px;
+  padding: 4px;
+}
+
+tooltip label {
+  color: var(--fg);
+}
+#custom-screenshot {
+  margin: 0 6px;
+  padding: 0 6px;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--fg);
+  transition:
+    background-color 0.15s ease-out,
+    color 0.15s ease-out,
+    transform 0.12s ease-out;
+}
+
+#custom-screenshot:hover {
+  background-color: rgba(90, 10, 11, 0.85); /* dark red */
+  color: #0a0a0a;
+  transform: translateY(-1px);
+}

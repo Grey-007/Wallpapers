@@ -1,0 +1,15 @@
+~/dotfiles/
+  install.sh
+  config/
+    hypr/
+    waybar/
+    wofi/
+    dunst/
+    kitty/
+    hyprpaper/
+  wallpapers/
+    matte/
+      01-main.jpg
+  gtk/
+    gtk-3.0/settings.ini
+    gtk-4.0/settings.ini

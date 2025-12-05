@@ -1,0 +1,76 @@
+# ------------------------------------
+# Dunst - Matte Minimal (Red / Black)
+# ------------------------------------
+
+[global]
+    monitor = 0
+    follow = mouse
+    width = 320
+    height = 0
+    origin = top-right
+    offset = 12x42
+    scale = 0
+
+    notification_limit = 5
+
+    progress_bar = true
+    progress_bar_height = 4
+    progress_bar_frame_width = 0
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+
+    # Frame & padding
+    frame_width = 2
+    frame_color = "#5a0a0b"     # dark red
+    separator_height = 1
+    padding = 10
+    horizontal_padding = 10
+    text_icon_padding = 6
+
+    # Appearance
+    transparency = 0
+    corner_radius = 8
+    separator_color = frame
+
+    sort = yes
+    idle_threshold = 120
+
+    font = Fira Sans 10
+
+    line_height = 0
+    markup = full
+
+    format = "<b>%s</b>\n%b"
+
+    # Icons
+    enable_recursive_icon_lookup = true
+    icon_theme = Papirus
+    icon_position = left
+    min_icon_size = 0
+    max_icon_size = 32
+
+    # Mouse actions
+    mouse_left_click = close_current
+    mouse_middle_click = do_action
+    mouse_right_click = close_all
+
+[urgency_low]
+    background = "#0a0a0a"
+    foreground = "#9a9a9a"
+    frame_color = "#1a1a1a"
+    timeout = 4
+    highlight = "#5a0a0b"
+
+[urgency_normal]
+    background = "#0a0a0a"
+    foreground = "#e0e0e0"
+    frame_color = "#5a0a0b"
+    timeout = 6
+    highlight = "#c01417"
+
+[urgency_critical]
+    background = "#140707"
+    foreground = "#ffffff"
+    frame_color = "#c01417"
+    timeout = 0
+    highlight = "#c01417"
