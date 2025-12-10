@@ -1,6 +1,0 @@
-[options]
-# Matte black background to match the rice
-background = 0a0a0a
-
-# Scale images to fit window without cropping
-scaling_mode = full

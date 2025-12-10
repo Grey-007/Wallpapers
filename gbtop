@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+
+# ========= SETTINGS =========
+BAR_LENGTH=30
+SLEEP_BOOT=0.15
+SLEEP_BAR=0.04
+# ============================
+
+# COLORS (kitty-compatible)
+RED=$'\e[31m'
+LIME=$'\e[92m'
+CYAN=$'\e[96m'
+MAGENTA=$'\e[95m'
+DIM=$'\e[2m'
+BOLD=$'\e[1m'
+RESET=$'\e[0m'
+
+# Hide cursor
+tput civis 2>/dev/null || true
+
+# Terminal width
+COLUMNS=$(tput cols 2>/dev/null || echo 80)
+
+# Center helper
+center() {
+  local text="$1"
+  local width=${2:-$COLUMNS}
+  local pad=$(( (width - ${#text}) / 2 ))
+  (( pad < 0 )) && pad=0
+  printf "%*s%s\n" "$pad" "" "$text"
+}
+
+clear
+
+# ========= 1) CYBER BOOT LOGS (lime green) =========
+center "${DIM}${LIME}>> BOOTING GREY-SYSTEM MONITOR v1.0${RESET}"
+sleep "$SLEEP_BOOT"
+center "${DIM}${LIME}[INIT]${RESET} Loading core modules..."
+sleep "$SLEEP_BOOT"
+center "${DIM}${LIME}[OK]${RESET} CPU telemetry linked"
+sleep "$SLEEP_BOOT"
+center "${DIM}${LIME}[OK]${RESET} Memory tracking online"
+sleep "$SLEEP_BOOT"
+center "${DIM}${LIME}[OK]${RESET} Disk & IO channels synced"
+sleep "$SLEEP_BOOT"
+center "${DIM}${LIME}[OK]${RESET} Network probe attached"
+sleep "$SLEEP_BOOT"
+center "${DIM}${LIME}[WARN]${RESET} User detected: ${BOLD}grey${RESET}"
+sleep "$SLEEP_BOOT"
+center "${DIM}${LIME}[OK]${RESET} Elevating aesthetic levels..."
+sleep 0.6
+
+clear
+
+# ========= 2) ASCII LOGO (RED) =========
+printf "%s" "${RED}"
+center "██████╗ ████████╗ ██████╗      ██████╗ "
+center "██╔══██╗╚══██╔══╝██╔═══██╗     ██╔══██╗"
+center "██████╔╝   ██║   ██║   ██║     ██████╔╝"
+center "██╔══██╗   ██║   ██║   ██║     ██╔═══╝ "
+center "██████╔╝   ██║   ╚██████╔╝     ██║     "
+center "╚═════╝    ╚═╝    ╚═════╝      ╚═╝     "
+printf "%s\n" "${RESET}"
+
+center "${MAGENTA}${BOLD}Powered by Grey${RESET}"
+sleep 0.8
+
+# ========= 3) ANIMATED LOADING BAR (RED) =========
+center ""
+center "${LIME}Initializing monitoring interface...${RESET}"
+sleep 0.4
+
+for p in $(seq 0 3 100); do
+  filled=$(( p * BAR_LENGTH / 100 ))
+  empty=$(( BAR_LENGTH - filled ))
+
+  bar_filled=$(printf '█%.0s' $(seq 1 $filled))
+  bar_empty=$(printf ' %.0s' $(seq 1 $empty))
+
+  printf "\r"
+  center "${RED}[${bar_filled}${bar_empty}] ${p}%%${RESET}"
+  sleep "$SLEEP_BAR"
+done
+
+center ""
+center "${LIME}[OK]${RESET} Launching btop..."
+sleep 0.5
+
+# Show cursor again
+tput cnorm 2>/dev/null || true
+
+# ========= 4) START REAL BTOP =========
+exec btop "$@"

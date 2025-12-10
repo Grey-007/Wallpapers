@@ -1,0 +1,3 @@
+save_dir = "~/Pictures/Screenshots"
+copy_to_clipboard = true
+file_format = "png"

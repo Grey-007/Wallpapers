@@ -1,0 +1,83 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# =========================================
+# Grey – Red Gradient Powerline + Side Line
+# Based on pastel-powerline preset :contentReference[oaicite:0]{index=0}
+# =========================================
+
+format = """
+[│](#3a0a0a)\
+[](#2b0004)\
+$username\
+[](bg:#4a0208 fg:#2b0004)\
+$directory\
+[](fg:#4a0208 bg:#7a030f)\
+$git_branch$git_status\
+[](fg:#7a030f bg:#b00414)\
+$nodejs$python$rust\
+[](fg:#b00414 bg:#e0081c)\
+$docker_context\
+[](fg:#e0081c bg:#2b0004)\
+$time\
+[ ](fg:#2b0004)
+"""
+
+# -------- USERNAME --------
+[username]
+show_always = true
+style_user = "bg:#2b0004 fg:#f5f5f5"
+style_root = "bg:#2b0004 fg:#f5f5f5"
+format = '[ $user ]($style)'
+disabled = false
+
+# -------- DIRECTORY --------
+[directory]
+style = "bg:#4a0208 fg:#f5f5f5"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music"     = " "
+"Pictures"  = " "
+
+# -------- GIT --------
+[git_branch]
+symbol = ""
+style = "bg:#7a030f fg:#ffffff"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#7a030f fg:#ffffff"
+format = '[ $all_status$ahead_behind ]($style)'
+
+# -------- LANGUAGES (NODE / PY / RUST) --------
+[nodejs]
+symbol = ""
+style = "bg:#b00414 fg:#ffffff"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = " "
+style = "bg:#b00414 fg:#ffffff"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#b00414 fg:#ffffff"
+format = '[ $symbol ($version) ]($style)'
+
+# -------- DOCKER --------
+[docker_context]
+symbol = " "
+style = "bg:#e0081c fg:#ffffff"
+format = '[ $symbol $context ]($style)'
+
+# -------- TIME --------
+[time]
+disabled = false
+time_format = "%R" # 13:37
+style = "bg:#2b0004 fg:#f5f5f5"
+format = '[ ♥ $time ]($style)'

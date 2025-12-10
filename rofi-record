@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+options=" Fullscreen\n Active window\n Region\n Stop recording"
+
+choice=$(printf "%b" "$options" | rofi -dmenu -p "Screen record" -i)
+
+case "$choice" in
+    " Fullscreen")
+        ~/.local/bin/record-toggle fullscreen
+        ;;
+    " Active window")
+        ~/.local/bin/record-toggle window
+        ;;
+    " Region")
+        ~/.local/bin/record-toggle region
+        ;;
+    " Stop recording")
+        ~/.local/bin/record-toggle stop
+        ;;
+    *)
+        exit 0
+        ;;
+esac

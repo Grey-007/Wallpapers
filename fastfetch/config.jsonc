@@ -1,0 +1,103 @@
+{
+  "logo": {
+    "type": "kitty",
+    "source": "/home/grey/.config/fastfetch/logo.png",
+    "width": 30,
+    "height": 10,
+    "preserveAspectRatio": true,
+    "padding": {
+      "right": 3,
+      "left": 2,
+      "top": 2
+    }
+  },
+
+  "display": {
+    "separator": " "
+  },
+
+  "modules": [
+    {
+      "type": "title",
+      "keyColor": "#ff3737"
+    },
+    {
+      "type": "os",
+      "key": " OS",
+      "keyColor": "#ff3737",
+      "valueColor": "#aaff33"
+    },
+    {
+      "type": "kernel",
+      "key": " Kernel",
+      "keyColor": "#ff3737",
+      "valueColor": "#aaff33"
+    },
+    {
+      "type": "uptime",
+      "key": "󰅐 Uptime",
+      "keyColor": "#ff3737",
+      "valueColor": "#aaff33"
+    },
+    {
+      "type": "packages",
+      "key": "󰏖 Packages",
+      "keyColor": "#ff3737",
+      "valueColor": "#aaff33"
+    },
+    {
+      "type": "shell",
+      "key": " Shell",
+      "keyColor": "#ff3737",
+      "valueColor": "#aaff33"
+    },
+    {
+      "type": "wm",
+      "key": " WM",
+      "keyColor": "#ff3737",
+      "valueColor": "#aaff33"
+    },
+    {
+      "type": "terminal",
+      "key": " Terminal",
+      "keyColor": "#ff3737",
+      "valueColor": "#aaff33"
+    },
+    {
+      "type": "cpu",
+      "key": " CPU",
+      "keyColor": "#aaff33",
+      "valueColor": "#aaff33"
+    },
+    {
+      "type": "gpu",
+      "key": "󰍛 GPU",
+      "keyColor": "#aaff33",
+      "valueColor": "#aaff33"
+    },
+    {
+      "type": "memory",
+      "key": " Memory",
+      "keyColor": "#aaff33",
+      "valueColor": "#aaff33"
+    },
+    {
+      "type": "disk",
+      "key": " Disk",
+      "keyColor": "#aaff33",
+      "valueColor": "#aaff33"
+    },
+    {
+      "type": "display",
+      "key": "󰍹 Display",
+      "keyColor": "#aaff33",
+      "valueColor": "#aaff33"
+    },
+    {
+      "type": "battery",
+      "key": " Battery",
+      "keyColor": "#ff3737",
+      "valueColor": "#aaff33"
+    }
+  ]
+}
