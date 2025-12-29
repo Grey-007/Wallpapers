@@ -1,2 +1,5 @@
-# dotfiles
-This rice is in progress
+# Wallpaper Directory
+all my wallpapers
+
+## no preview look it for urself 
+## good luck
