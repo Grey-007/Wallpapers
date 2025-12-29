@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Omarchy-style package search using fzf + yay
 # Instant search, preview, repo/AUR badges, theme-aware.
 
 set -euo pipefail
