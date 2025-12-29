@@ -1,5 +1,5 @@
 # Wallpaper Directory
-all my wallpapers
+All my wallpapers
 
-## no preview look it for urself 
-## good luck
+## No preview|look it for urself 
+## Good luck
